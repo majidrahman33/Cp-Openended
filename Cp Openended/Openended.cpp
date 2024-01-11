@@ -22,28 +22,51 @@ void mergeArrays(const int array1[], int size1, const int array2[], int size2, i
 
     sizeMerged = k;
 }
+void sorting(int arr[])
+{
 
+    for (int i = 0; i < 12; i++)
+    {
+        int temp;
+        for (int j = 0; j < 12; j++)
+        {
+            if (arr[j] > arr[j + 1])
+            {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    cout << "Sorted Array";
+    for (int i = 0; i < 12; i++)
+    {
+        cout << arr[i + 1] << " ";
+    }
+    cout << endl;
+
+
+}
 void findCommonElements(const int array1[], int size1, const int array2[], int size2) {
     int i = 0, j = 0;
 
     cout << "Common Elements: ";
-    while (i < size1 && j < size2)
+    for(int i = 0 ; i < 5; i++)
     {
-        if (array1[i] == array2[j])
+        for (int j = 0; j < 7; j++)
         {
-            cout << array1[i] << " ";
-            i++;
-            j++;
+            if (array1[i] == array2[j])
+            {
+                cout << array1[i] << " ";
+                break;
+            }
         }
-        else if (array1[i] < array2[j]) {
-            i++;
-        }
-        else {
-            j++;
-        }
+  
     }
     cout << endl;
 }
+
 
 bool isPalindrome(const std::string& sentence) {
     int start = 0;
@@ -114,7 +137,7 @@ int main() {
         cout << mergedArray[i] << " ";
     }
     cout << endl;
-
+    sorting(mergedArray);
     findCommonElements(array1, sizeArray1, array2, sizeArray2);
 
     string userSentence;
